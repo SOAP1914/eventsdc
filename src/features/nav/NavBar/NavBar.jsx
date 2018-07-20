@@ -15,13 +15,8 @@ class NavBar extends Component {
           <Menu.Item name="Food" />
           <Menu.Item name="Government" />
           <Menu.Item position="right">
-            <Button basic inverted content="Login" />
-            <Button
-              basic
-              inverted
-              content="Sign Out"
-              style={{ marginLeft: '0.5em' }}
-            />
+            <Button basic inverted content="Search" />
+        
           </Menu.Item>
         </Container>
       </Menu>
