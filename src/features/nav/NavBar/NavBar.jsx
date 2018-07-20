@@ -10,10 +10,10 @@ class NavBar extends Component {
             <img src="assets/logo.png" alt="logo" />
             Re-vents
           </Menu.Item>
-          <Menu.Item name="Events" />
-          <Menu.Item>
-            <Button floated="right" positive inverted content="Create Event" />
-          </Menu.Item>
+          <Menu.Item name="Music" />
+          <Menu.Item name="Arts" />
+          <Menu.Item name="Food" />
+          <Menu.Item name="Government" />
           <Menu.Item position="right">
             <Button basic inverted content="Login" />
             <Button
