@@ -13,6 +13,7 @@ class NavBar extends Component {
           <Menu.Item name="Music" />
           <Menu.Item name="Arts" />
           <Menu.Item name="Food" />
+          <Menu.Item name="Fitness" />
           <Menu.Item name="Government" />
           <Menu.Item position="right">
             <Button basic inverted content="Search" />

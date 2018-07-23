@@ -5,12 +5,12 @@ class EventDashboard extends Component {
     render() {
         return(
             <Grid>
-                <Grid.Column width={6}>
-                    <h2>Left Column</h2>
+                <Grid.Column width={16}>
+                    <h2>Filter</h2>
                 </Grid.Column>
-                <Grid.Column width={10}>
-                    <h2>Right Column</h2>
-                </Grid.Column>
+                <Grid.Row width={16}>
+                    <h2>Content</h2>
+                </Grid.Row>
             </Grid>
         )
     }
