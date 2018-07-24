@@ -13,7 +13,7 @@ class EventDashboard extends Component {
 
     renderItems(){
         return this.state.event.map((item) =>(
-            <EventSingle key={items.url} item={item}/>
+            <EventSingle key={item.url} item={item}/>
         ));
     }
 

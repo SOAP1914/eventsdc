@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react'
 
-cont EventSingle = ({item}) => (
+const EventSingle = ({item}) => (
     <Card>
     <Image src={item.logo.url} />
     <Card.Content>
