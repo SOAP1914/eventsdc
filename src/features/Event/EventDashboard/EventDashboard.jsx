@@ -4,12 +4,16 @@ import axios from 'axios';
 import EventSingle from '../EventDashboard/EventSingle'
 
 class EventDashboard extends Component {
-    state = {
-        event: [],
-      }
-    
+    constructor(props){
+        super(props);
+        this.state = {
+            event: [],
+        };
+    }
+        
+      
     componentDidMount(){
-        const url = `https://www.eventbriteapi.com/v3/events/search?token=IZQ47CP6HI5KKV7V5ADC`;
+        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&token=IZQ47CP6HI5KKV7V5ADC`;
 
         axios.get(url)
          .then((res) => {
@@ -22,7 +26,7 @@ class EventDashboard extends Component {
 
     renderItems(){
         return this.state.event.map((item) =>(
-            <EventSingle key={item.url} item={item}/>
+            <EventSingle key={item.id} item={item}/>
         ));
     }
 
