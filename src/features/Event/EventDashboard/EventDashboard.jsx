@@ -11,7 +11,6 @@ class EventDashboard extends Component {
         };
     }
         
-      
     componentDidMount(){
         const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&token=IZQ47CP6HI5KKV7V5ADC`;
 
@@ -20,13 +19,14 @@ class EventDashboard extends Component {
              this.setState({
                  event: res.data.events
              })
+             console.log(res);
          })
          .catch((error) => console.log(error));
     }
 
     renderItems(){
         return this.state.event.map((item) =>(
-            <EventSingle key={item.id} item={item}/>
+            <EventSingle key={item.id} item={item} />
         ));
     }
 
@@ -37,10 +37,7 @@ class EventDashboard extends Component {
                     <h2>Filter</h2>
                 </Grid.Column>
                 <Grid.Row width={16}>
-                    <h2>Content</h2>
-                    <ul>
                         {this.renderItems()}
-                    </ul>
                 </Grid.Row>
             </Grid>
         )
