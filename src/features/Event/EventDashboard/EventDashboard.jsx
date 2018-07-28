@@ -32,12 +32,12 @@ class EventDashboard extends Component {
 
     render() {
         return(
-            <Grid>
-                <Grid.Column width={16}>
+            <Grid columns='equal' stackable container style={{ padding: '0 0 60px 0' }}>
+                <Grid.Row centered width={16}>
                     <h2>Filter</h2>
-                </Grid.Column>
-                <Grid.Row width={16}>
-                        {this.renderItems()}
+                </Grid.Row>
+                <Grid.Row centered width={16}>
+                    {this.renderItems()}
                 </Grid.Row>
             </Grid>
         )
