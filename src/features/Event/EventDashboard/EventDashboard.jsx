@@ -7,19 +7,22 @@ class EventDashboard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            event: [],
+            event: [],    
         };
+        //this.setstate = this.setstate.bind(this);
     }
         
     componentDidMount(){
-        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&token=IZQ47CP6HI5KKV7V5ADC`;
-
+        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&expand=logo&token=IZQ47CP6HI5KKV7V5ADC`;
+        
         axios.get(url)
          .then((res) => {
-             this.setState({
+             this.setState (() => ({
                  event: res.data.events
-             })
+             }))
              console.log(res);
+             console.log("Image");
+             console.log(res.data.events.description.text);
          })
          .catch((error) => console.log(error));
     }
