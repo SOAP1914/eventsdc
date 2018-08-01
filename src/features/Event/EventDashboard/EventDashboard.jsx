@@ -13,16 +13,24 @@ class EventDashboard extends Component {
     }
         
     componentDidMount(){
-        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&expand=logo&token=IZQ47CP6HI5KKV7V5ADC`;
+        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&expand=logo_id,category_id&token=IZQ47CP6HI5KKV7V5ADC`;
         
         axios.get(url)
-         .then((res) => {
-             this.setState (() => ({
+         .then(res => {
+             this.setState ({
                  event: res.data.events
-             }))
-             console.log(res);
-             console.log("Image");
-             console.log(res.data.events.description.text);
+                //  event: res.data.events.forEach(element => {
+                //      if (element.logo){
+
+                //         console.log(element.logo.url);}
+                        
+                //     else{
+                //         console.log("No Go Buddy");
+                //      }
+                //  })
+                 
+             })
+             console.log(res.data.events);
          })
          .catch((error) => console.log(error));
     }
