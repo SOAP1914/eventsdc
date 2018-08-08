@@ -13,22 +13,12 @@ class EventDashboard extends Component {
     }
         
     componentDidMount(){
-        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&expand=logo_id,category_id&token=IZQ47CP6HI5KKV7V5ADC`;
+        const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=washingtondc&categories=103&token=IZQ47CP6HI5KKV7V5ADC`;
         
         axios.get(url)
          .then(res => {
              this.setState ({
                  event: res.data.events
-                //  event: res.data.events.forEach(element => {
-                //      if (element.logo){
-
-                //         console.log(element.logo.url);}
-                        
-                //     else{
-                //         console.log("No Go Buddy");
-                //      }
-                //  })
-                 
              })
              console.log(res.data.events);
          })
@@ -47,9 +37,11 @@ class EventDashboard extends Component {
                 <Grid.Row centered width={16}>
                     <h2>Filter</h2>
                 </Grid.Row>
+                
                 <Grid.Row centered width={16}>
                     {this.renderItems()}
                 </Grid.Row>
+            
             </Grid>
         )
     }

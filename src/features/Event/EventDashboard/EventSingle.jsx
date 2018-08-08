@@ -9,6 +9,7 @@ const EventSingle = ({item}) => (
         image={item.logo ? item.logo.url : null}
         header={item.name.text}
         meta={item.start.local} 
+
         //description={item.description.text}
     />
     </Card.Group>
